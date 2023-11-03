@@ -1,34 +1,32 @@
-/*Separating digits: Write a program that takes an integer, stores its digits into an 
-array, and then prints the array with spaces separating the digits. Test your function.
-Example run (user response in bold): 
-Enter a number: 3456
-The number with spaces is: 3 4 5 6 
-HINT: Use the process of separating digits, as in Exercise Sheet 2, Question 4. */
+/*Name:Uche Hadassah
+This program takes in an integer and stores it's digits into an array, then prints the array out with 
+spaces in between the numbers*/
 #include<iostream>
 using namespace std;
 int main()
 {
 	const int MAX = 100;
-	int num;
 	int Array[100];
+	int num;
 	int i = 0;
-	cout << "Enter an integer:";
-	cin >> num;
-	if (num <= 0)
+	cout << "Enter a number:";
+	cin >> num;//Receives the number from the user
+	if (num <= 0)//Ensures that the number is positive
 	{
 		cout << "Invalid! Enter a positive number:";
 		cin >> num;
 	}
 	while (num > 0)
 	{
-		Array[i] = num % 10;
-		num = num / 10;
-		i++;
+		//Stores the number into the array in reverse
+		Array[i] = num % 10;//Saves the last digit of the number into the first position in the array
+		num = num / 10;//Removes the last digit of the number
+		i++;//Increments the counter
 	}
 	cout << "The number with spaces is:";
-	for (int j = i - 1; j >= 0; j--)
+	for (int j = i - 1; j >= 0; j--)//j is initialized to i - 1 since that is the actual size of the array
 	{
-		cout << Array[j] << " ";
+		cout << Array[j] << " ";//outputs the array with spaces in between
 	}
 	return 0;
 }
