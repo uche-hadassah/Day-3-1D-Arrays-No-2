@@ -14,7 +14,12 @@ int main()
 	int i = 0;
 	cout << "Enter an integer:";
 	cin >> num;
-	while(num > 0)
+	if (num <= 0)
+	{
+		cout << "Invalid! Enter a positive number:";
+		cin >> num;
+	}
+	while (num > 0)
 	{
 		Array[i] = num % 10;
 		num = num / 10;
