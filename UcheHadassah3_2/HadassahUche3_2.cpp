@@ -14,17 +14,14 @@ int main()
 	int i = 0;
 	cout << "Enter an integer:";
 	cin >> num;
-	while(num % 10 != 0)
+	while(num > 0)
 	{
-		for (; i < MAX; i++)//Saves the number in reverse
-		{
-			Array[i] = num % 10;
-			num = num / 10;
-		}
-		Array[i] = num;
+		Array[i] = num % 10;
+		num = num / 10;
+		i++;
 	}
 	cout << "The number with spaces is:";
-	for (int j = i; j >= 0; j--)
+	for (int j = i - 1; j >= 0; j--)
 	{
 		cout << Array[j] << " ";
 	}
